@@ -1,0 +1,7 @@
+{
+  "name": "app_pdv",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
