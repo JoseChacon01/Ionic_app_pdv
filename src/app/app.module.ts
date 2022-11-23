@@ -7,6 +7,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { Api } from 'src/services/api';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,8 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule   /*import da biblioteca que vai ser chamada no "api.ts" que auxilia no service para BD externo*/
   ],
 
-
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+/*import da class: Apis*/
+  providers: [ Api, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

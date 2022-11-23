@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map'; /*map é uma biblioteca externa, para a utiliza�
 
 
 @Injectable()
-export class Apis{
+export class Api{
     server: string = 'http://localhost/apisIonic7/'; /*aponta para onde esta hospedado o projeto e apis*/
 
     constructor(private http : HttpClient){ /*para chamar a class é 'HttpClient' preciso ter instanciado ela antes em app.models.ts*/
