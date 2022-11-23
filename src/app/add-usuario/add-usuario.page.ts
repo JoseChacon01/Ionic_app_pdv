@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Apis } from 'src/services/api';
 
 @Component({
   selector: 'app-add-usuario',
@@ -15,7 +16,7 @@ export class AddUsuarioPage implements OnInit {
   nivel: string = "";
   id: string = "";
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private provider: Apis) { }
 
   /* funções */
   ngOnInit() {
