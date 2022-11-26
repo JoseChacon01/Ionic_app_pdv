@@ -64,6 +64,7 @@ export class AddUsuarioPage implements OnInit {
           if(data['ok'] == true){          //Se tiver tudo certo no preenchimento do formulario 'ok' o usuario sera direcionado(navigate) para pagina "usuarios" e a mensagem definida em "inserir.php" ira receber a cor "suceess".
           this.router.navigate(['usuarios']);
           this.mensagem(data['mensagem'], 'success');
+          this.limparCampos(); //Essa função foi criada lá em baixo, ela serve para: Após o usuario criacar no botão de salvar e as informações serem salvas com sucesso, o campo vai retornar vazio quando ele clicar no botão para adicionar o usuario, novamente.
         }else{
           this.mensagem(data['mensagem'], 'danger'); //Caso não seja prenchido corretamente, ira ser exibida a mensagem definida em "inserir.php" na cor "danger"
         }
@@ -75,5 +76,14 @@ export class AddUsuarioPage implements OnInit {
 
   editar(){
     
+  }
+
+  limparCampos(){
+    this.nome = "";
+    this.cpf = "";
+    this.email = "";
+    this.senha = "";
+    this.nivel = "";
+
   }
 }

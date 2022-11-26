@@ -7,6 +7,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxMaskModule } from 'ngx-mask';
 import { Api } from 'src/services/api';
 
 @NgModule({
@@ -15,10 +16,13 @@ import { Api } from 'src/services/api';
     BrowserModule, 
     IonicModule.forRoot(), 
     AppRoutingModule,
-    HttpClientModule   /*import da biblioteca que vai ser chamada no "api.ts" que auxilia no service para BD externo*/
+    HttpClientModule,   //import da biblioteca que vai ser chamada no "api.ts" que auxilia no service para BD externo*/
+    NgxMaskModule.forRoot({  //import da biblioteca que ai possibilitar a atulização de mascara e caracteres nos campos do formulario. Mas antes é preciso instalar no pronpt: npm install --save ngx-mask - É preciso dá o mesmo inport no modulo do arquivo que vai ustilizar essa mascara
+      dropSpecialCharacters: false
+    }),
   ],
 
-/*import da class: Apis*/
+//import da class: Apis
   providers: [ Api, { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })

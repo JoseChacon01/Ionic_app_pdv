@@ -8,12 +8,17 @@ import { AddUsuarioPageRoutingModule } from './add-usuario-routing.module';
 
 import { AddUsuarioPage } from './add-usuario.page';
 
+import { NgxMaskModule } from 'ngx-mask';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AddUsuarioPageRoutingModule
+    AddUsuarioPageRoutingModule,
+    NgxMaskModule.forRoot({
+      dropSpecialCharacters: false
+    }),
   ],
   declarations: [AddUsuarioPage]
 })
