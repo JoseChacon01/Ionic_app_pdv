@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header>                        <!--Codigo == Scripts Prontos== -->
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
@@ -10,7 +10,7 @@
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
-</ion-header>               <!--ESSA É A PAGINA OUDE DEVE SER AXIBIDOS OS USUARIOS E SEUS DADOS, QUE FORAM CADASTRADOS NO BD-->
+</ion-header>               <!--ESSA É A PAGINA ONDE DEVE SER AXIBIDOS OS USUARIOS E SEUS DADOS, QUE FORAM CADASTRADOS NO BD -- SCRIPTS PRONTOS 07-->
 
 <ion-row class="azulclaro"> <!--Class CSS, criada no CSS Global (global.css)-->
   
@@ -63,7 +63,7 @@
   </ion-refresher>
   
  
-  <ion-infinite-scroll  (ionInfinite)="loadData($event)"><!--loadData: Qundo terminar o carregamento, caso tenha uma outra pagina, ele carrega mais dados-->
+  <ion-infinite-scroll  (ionInfinite)="loadData($event)"><!--loadData: Quando terminar o carregamento, caso tenha uma outra pagina, ele carrega mais dados-->
   <ion-infinite-scroll-content
     loadingSpinner="bubbles"
     loadingText="Carregando mais dados">

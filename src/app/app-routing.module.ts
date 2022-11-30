@@ -3,7 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '', /*quando não tiver rota, direcione para "folder" que sera a primeira pagina aberta pelo usuario, vc escolhe qual será.*/
+    path: '', //Quando não tiver rota, direcione para "folder" que será a primeira página aberta pelo usuário, você escolhe qual será. 
     redirectTo: 'folder',
     pathMatch: 'full'
   },
@@ -12,8 +12,8 @@ const routes: Routes = [
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
   },
   {
-    path: 'usuarios', /*o path é criado altomaticamente ao criar a pagina, assim como o arquivo/doc "usuarios" - Quando chamar "usuarios" ele vai estanciar a classe e retornar a pagina html*/
-    loadChildren: () => import('./usuarios/usuarios.module').then( m => m.UsuariosPageModule)
+    path: 'usuarios', //P1. O path é criado altomaticamente ao criar a pagina, assim como o arquivo/doc "usuarios" - 
+    loadChildren: () => import('./usuarios/usuarios.module').then( m => m.UsuariosPageModule) // P2. Quando chamar "usuarios" ele vai estanciar a classe e retornar a pagina html.
   },
   {
     path: 'add-usuario',

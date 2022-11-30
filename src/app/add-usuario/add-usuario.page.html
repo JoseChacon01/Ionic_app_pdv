@@ -8,14 +8,20 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+
+<ion-content class="ion-padding"> <!--SCRIPTS PRONTOS 02 - O SCRIPT FOI MODIFICADO E AJUSTADO DEACORDO COM NECESSIDADE-->
  
   <input [(ngModel)]="nome" class="form-control my-3" placeholder="Insira o Nome"> <!--O "my-2" (propriedade do Bootstrap) serve para dá o espaçamento entre os campos. Poderia estilizar com CSS, pos ja tem pastas com o CSS das paginas-->
+  
   <input [(ngModel)]="cpf" mask="000.000.000-00" class="form-control my-3" placeholder="Insira o CPF"> 
+ 
   <input [(ngModel)]="email" type="email" class="form-control my-3" placeholder="Insira o E-mail"> 
+  
   <input [(ngModel)]="senha" type="password" class="form-control my-3" placeholder="Insira a Senha"> 
 
   <ion-item>
+
+
     <ion-label>Nível</ion-label>
     <ion-select placeholder="Selecione" [(ngModel)]="nivel">
       <ion-select-option value="Operador">Operador</ion-select-option>
@@ -24,7 +30,7 @@
     </ion-select>
   </ion-item>
 
-  <!--Condição *ngIF="!id - Se não existir um elemento id, deve aperecer o botão de Salvar"-->
+  <!--Condição *ngIF="!id - Se não existir um elemento id, deve aparecer o botão de Salvar"-->
   <ion-button *ngIf="!id" color="primary" expand="block" (click)="cadastrar()">
     Salvar
   </ion-button>

@@ -5,8 +5,8 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  public appPages = [ /*appPages é onde vai ser carregado nossas paginas*/
-/*nome dos itens - end. para ond vai ser redirecionado - icone dele*/
+  public appPages = [ //appPages é onde vai ser carregado nossas páginas  
+  //nome dos itens - end. para onde vai ser redirecionado - ícone dele 
     { title: 'Home', url: '/folder', icon: 'home' },
     { title: 'Usuários', url: '/usuarios', icon: 'people' },
   ];

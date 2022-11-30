@@ -16,10 +16,10 @@ import { Api } from 'src/services/api';
     BrowserModule, 
     IonicModule.forRoot(), 
     AppRoutingModule,
-    HttpClientModule,   //import da biblioteca que vai ser chamada no "api.ts" que auxilia no service para BD externo*/
-    NgxMaskModule.forRoot({  //import da biblioteca que ai possibilitar a atulização de mascara e caracteres nos campos do formulario. Mas antes é preciso instalar no pronpt: npm install --save ngx-mask - É preciso dá o mesmo inport no modulo do arquivo que vai ustilizar essa mascara
-      dropSpecialCharacters: false
-    }),
+    HttpClientModule,   //import da biblioteca que vai ser chamada no "api.ts" que auxilia no service para BD externo
+    NgxMaskModule.forRoot({       //P1. import da biblioteca que vai possibilitar a utilização de mascara e caracteres nos campos do formulario.
+      dropSpecialCharacters: false //P2. Mas antes é preciso instalar no pronpt: npm install --save ngx-mask - É preciso dá o mesmo inport no 
+    }),                            //P3. modulo do arquivo que vai ustilizar essa mascara
   ],
 
 //import da class: Apis

@@ -16,7 +16,7 @@ import { NgxMaskModule } from 'ngx-mask';
     FormsModule,
     IonicModule,
     AddUsuarioPageRoutingModule,
-    NgxMaskModule.forRoot({
+    NgxMaskModule.forRoot({       //SCRIPTS PRONTOS 06 -- BIBLIOTECA DE MASCARAS
       dropSpecialCharacters: false
     }),
   ],
