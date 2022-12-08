@@ -17,7 +17,7 @@
  
   <input [(ngModel)]="email" type="email" class="form-control my-3" placeholder="Insira o E-mail"> 
   
-  <input [(ngModel)]="senha" type="password" class="form-control my-3" placeholder="Insira a Senha"> 
+  <input [(ngModel)]="senha" class="form-control my-3" placeholder="Insira a Senha"> 
 
   <ion-item>
 
@@ -35,7 +35,7 @@
     Salvar
   </ion-button>
 <!--Ja nesse caso, se existir o elemento id, irá exibir o botão de Editar-->
-  <ion-button *ngIf="id" color="primary" expand="block" (click)="editar()">
+  <ion-button *ngIf="id" color="primary" expand="block" (click)="cadastrar()">
     Editar
   </ion-button>
 

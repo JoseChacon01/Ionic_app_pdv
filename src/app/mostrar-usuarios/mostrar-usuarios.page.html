@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" (click)="Usuarios()">
+      <ion-icon  name="arrow-back"> </ion-icon>
+    </ion-buttons>
+    <ion-title>Dados do Usuários</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content> <!--SCRIPTS PRONDOS 11 - CARD PARA MOSTRAR DADOS-->
+  <ion-card class="cinza-claro">
+    <ion-card-header>
+      
+      <ion-card-title>
+        {{nome}}     <!--ERRO PARA EXIBIR SENHA E NIVEL -- AULA 39-->
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Email: {{email}} <br>
+      Senha: {{senha}} <br>
+
+      CPF: {{cpf}} <br><br>
+  
+     Nível: {{nivel}} <br><br>
+      
+    </ion-card-content>
+  </ion-card>
+  </ion-content>

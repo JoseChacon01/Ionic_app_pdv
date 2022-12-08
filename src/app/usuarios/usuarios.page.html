@@ -12,7 +12,7 @@
   </ion-toolbar>
 </ion-header>               <!--ESSA É A PAGINA ONDE DEVE SER AXIBIDOS OS USUARIOS E SEUS DADOS, QUE FORAM CADASTRADOS NO BD -- SCRIPTS PRONTOS 07-->
 
-<ion-row class="azulclaro"> <!--Class CSS, criada no CSS Global (global.css)-->
+<ion-row class="azulclaro"> <!--Compo de Busca: toda vez que for clicado ou alterado, ira chamar o método de "carregar"-->
   
   <ion-input placeholder="Buscar pelo Nome ou CPF" [(ngModel)]="nome" type="search" (ionChange)="carregar()" ></ion-input>
 
@@ -25,19 +25,19 @@
 </ion-row>
 
 
-<ion-content class="cinza-claro" class="ion-padding">
+<ion-content>
 
   <ion-list>
-    <ion-item-sliding *ngFor="let item of clientes">
-      <ion-item-options side="start">
+    <ion-item-sliding *ngFor="let item of itens"> <!-- foi criado o laço de repetição '*ngFor', com uma variavel chamada 'item' que pertence ao array de dados 'itens'-->
+      <ion-item-options side="start"> <!--Botões que são exibidos ao arrastar para o lado. E vão passar os seguintes dados-->
         <ion-item-option (click)="editar(item.id, item.nome, item.cpf, item.email, item.telefone, item.endereco, item.obs)">
-          Editar
+          Editar     <!--click - refere-se a opção de arrastar para o lado-->
         </ion-item-option>
       </ion-item-options>
   
       <ion-item>
-        <ion-label>{{item.nome}}
-        <h6><small> <span>{{item.telefone}}</span>  - {{item.email}}</small></h6>
+        <ion-label>{{item.nome}} - {{item.nivel}}
+        <h6><small> <span>{{item.cpf}}</span>  - {{item.email}}</small></h6>
       </ion-label>
       </ion-item>
   
