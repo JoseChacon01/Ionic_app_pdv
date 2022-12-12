@@ -38,6 +38,9 @@ export class AddUsuarioPage implements OnInit {
       this.email = data.email;
       this.senha = data.senha;
       this.nivel = data.nivel;
+
+      this.antigo = data.email; //O email e cpf ja cadastrado, esta sendo recuperado para o campo 'antigo'
+      this.antigo2 = data.cpf;
   
     });
   }
@@ -69,6 +72,8 @@ export class AddUsuarioPage implements OnInit {
         senha: this.senha,
         nivel: this.nivel,
         id: this.id,
+        antigo: this.antigo,
+        antigo2: this.antigo2,
       }  
       
        //P1. Chamando a função "dadosApi" que se encontra em "api.ts"-> Passamos para "dadosApi" 2 parâmetros, que são as informações que estamos passando 

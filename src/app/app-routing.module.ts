@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '', //Quando não tiver rota, direcione para "folder" que será a primeira página aberta pelo usuário, você escolhe qual será. 
-    redirectTo: 'folder',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -30,6 +30,10 @@ const routes: Routes = [
   {
     path: 'add-usuario/:id/:nome/:cpf/:email/:senha/:nivel',
     loadChildren: () => import('./add-usuario/add-usuario.module').then( m => m.AddUsuarioPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   }
 ];
 

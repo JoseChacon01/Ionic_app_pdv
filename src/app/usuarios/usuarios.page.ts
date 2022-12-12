@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
 import { Api } from 'src/services/api';
 
 @Component({
@@ -20,7 +21,8 @@ export class UsuariosPage implements OnInit {
     private router:Router,
     private provider: Api, //importando a class Apis que está dentro da pasta "Services" -> Necario fazr essa ligação para add um novo usuario.
     private actRouter:ActivatedRoute, //isso é para que seja possível passar parâmetros entre tela (passar de uma página para outra) 
-    ) { }
+    public toastController: ToastController //P1. Formato, segundo a documentação para tratar notificações -> 
+    ) { }                                  //P2. Ele pode ser usado para fornecer feedback sobre uma operação ou para exibir uma mensagem do sistema. 
 
   ngOnInit() {
     
@@ -34,6 +36,16 @@ export class UsuariosPage implements OnInit {
     this.itens = [];
     this.start = 0;
     this.carregar();
+  }
+
+  async mensagem(mensagem, cor){
+    const toast = await this.toastController.create({ //É criada a "const" segundo a documentação e passado algumas propriedades como a mensagem, duração, botões, cores, etc. 
+      message: mensagem,
+      duration:2000,
+      color: cor
+    });
+    toast.present();
+
   }
 
   carregar(){ //SCRIPTS PRONTOS 08
@@ -99,8 +111,28 @@ editar(id, nome, cpf, email, senha, nivel){
 
 }
 
-excluir(){
+excluir(id){
+  return new Promise(resolve => {
+    let dados = { //P1. Todos esses dados, vão armazenar os dados que o usuário digita no formulário. por isso que tem o "this." isso quer dizer que o "nome" da variável
+                 // P2.  "dados" vai armazenar o mesmo valor do "nome" declarado acima, que vai receber o valor do formulário, digitado pelo usuário. 
+      id: id, // pega o id que esta dentro do metodo "excluir(id)"
+    }  
+    
+     //P1. Chamando a função "dadosApi" que se encontra em "api.ts"-> Passamos para "dadosApi" 2 parâmetros, que são as informações que estamos passando 
+    //P2. (dados -> variável que foi inserida a cima) e a String da Api (ou seja, a rota do arquivo responsável pela ponte da exclusão dos dados no BD)  
+    this.provider.dadosApi(dados, 'usuarios/excluir.php' ).subscribe(
+      data=>{
+        
+        if(data['ok'] == true){              
+        this.carregar(); //Após ter dado tudo certo (ok) com a exclusão, ira chamar o metodo "carregar()" para atualizar a pagina.
+        this.mensagem(data['mensagem'], 'success');
+      }else{
+        this.mensagem(data['mensagem'], 'danger'); 
+      }
 
+      }
+    ) 
+  }) 
 }
 
 mostrar(id, nome, cpf, email, senha, nivel){

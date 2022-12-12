@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -12,5 +13,18 @@ export class AppComponent {
   ];
   /* == public labels: São elementos adicionais que ficavam a baixo, no menu lateral. ==
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];*/
-  constructor() {}
+  
+  url : String;
+
+  constructor(private router: Router) {
+
+    router.events.subscribe(event => {
+
+      if (event instanceof NavigationEnd){
+        this.url = event.url;
+
+        console.log(this.url); //Vai apresentar em qual url estou no projeto.
+      }
+    })
+  }
 }
