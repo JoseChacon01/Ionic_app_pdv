@@ -10,10 +10,16 @@ export class AppComponent {
   //nome dos itens - end. para onde vai ser redirecionado - ícone dele 
     { title: 'Home', url: '/folder', icon: 'home' },
     { title: 'Usuários', url: '/usuarios', icon: 'people' },
+    { title: 'Sair', url: '/', icon: 'exit' },
   ];
   /* == public labels: São elementos adicionais que ficavam a baixo, no menu lateral. ==
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];*/
   
+  public appPages2 = [ 
+    { title: 'Home', url: '/painel-financeiro', icon: 'home' },
+    { title: 'contas', url: '/painel-financeiro', icon: 'people' },
+    { title: 'Sair', url: '/', icon: 'exit' },
+  ];
   url : String;
 
   constructor(private router: Router) {

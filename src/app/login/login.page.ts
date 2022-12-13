@@ -52,7 +52,7 @@ export class LoginPage implements OnInit {
           }
 
           if(data['usu']['nivel'] == 'Tesoureiro'){
-            this.router.navigate(['usuarios']);
+            this.router.navigate(['painel-financeiro']);
           } 
 
         }else{
