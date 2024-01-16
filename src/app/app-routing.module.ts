@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path: '', //Quando não tiver rota, direcione para "folder" que será a primeira página aberta pelo usuário, você escolhe qual será. 
     redirectTo: 'login',
-    pathMatch: 'full'
+    pathMatch: 'full' 
   },
   {
     path: 'folder',

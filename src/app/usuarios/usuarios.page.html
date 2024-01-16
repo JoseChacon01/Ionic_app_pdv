@@ -30,7 +30,7 @@
   <ion-list>
     <ion-item-sliding *ngFor="let item of itens"> <!-- foi criado o laço de repetição '*ngFor', com uma variavel chamada 'item' que pertence ao array de dados 'itens'-->
       <ion-item-options side="start"> <!--Botões que são exibidos ao arrastar para o lado. E vão passar os seguintes dados-->
-        <ion-item-option (click)="editar(item.id, item.nome, item.cpf, item.email, item.telefone, item.endereco, item.obs)">
+        <ion-item-option (click)="editar(item.id, item.nome, item.cpf, item.email, item.senha, item.nivel, item.obs)">
           Editar     <!--click - refere-se a opção de arrastar para o lado-->
         </ion-item-option>
       </ion-item-options>
@@ -42,7 +42,7 @@
       </ion-item>
   
       <ion-item-options side="end">
-        <ion-item-option (click)="mostrar(item.id, item.nome, item.cpf, item.email, item.telefone, item.endereco, item.obs)" color="secondary">
+        <ion-item-option (click)="mostrar(item.id, item.nome, item.cpf, item.email, item.senha, item.nivel, item.obs)" color="secondary">
           Mostrar
         </ion-item-option>
         <ion-item-option (click)="excluir(item.id)" color="danger">

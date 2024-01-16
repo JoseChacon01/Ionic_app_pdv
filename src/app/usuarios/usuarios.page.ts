@@ -7,7 +7,7 @@ import { Api } from 'src/services/api';
   selector: 'app-usuarios',
   templateUrl: './usuarios.page.html',
   styleUrls: ['./usuarios.page.scss'],
-})          
+})         
             //construtor - inicializador
 export class UsuariosPage implements OnInit {
 

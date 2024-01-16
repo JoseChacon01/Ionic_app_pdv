@@ -15,7 +15,7 @@ export class LoginPage implements OnInit {
   
   constructor(
     private router:Router, 
-    private provider: Api, //importando a class Apis que está dentro da pasta "Services" -> Necario fazr essa ligação para add um novo usuario.
+    private provider: Api, //importando a clasvs Apis que está dentro da pasta "Services" -> Necario fazr essa ligação para add um novo usuario.
     public toastController: ToastController
   ) { }
 

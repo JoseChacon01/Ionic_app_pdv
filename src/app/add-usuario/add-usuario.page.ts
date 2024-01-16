@@ -23,7 +23,7 @@ export class AddUsuarioPage implements OnInit {
 
   constructor(
     private router:Router, 
-    private provider: Api, //importando a class Apis que está dentro da pasta "Services" -> Necario fazr essa ligação para add um novo usuario.
+    private provider: Api, //importando a class hApis que está dentro da pasta "Services" -> Necario fazr essa ligação para add um novo usuario.
     private actRouter:ActivatedRoute, //isso é para que seja possível passar parâmetros entre tela (passar de uma página para outra) 
     public toastController: ToastController //P1. Formato, segundo a documentação para tratar notificações -> 
     ) { }                                  //P2. Ele pode ser usado para fornecer feedback sobre uma operação ou para exibir uma mensagem do sistema. 

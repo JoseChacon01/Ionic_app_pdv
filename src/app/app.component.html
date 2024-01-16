@@ -4,8 +4,8 @@
     <ion-menu contentId="main-content" type="overlay" *ngIf="url == '/folder' || url == '/usuarios'"> <!--*ngIf="url == '/folder' || url == '/usuarios'" == Se a url que é passada for igual a '/folder' ou '/usuarios', é para exibir o menu, coso contrario não exiba.  -->
       <ion-content>
         <ion-list id="inbox-list">
-          <ion-list-header>Agro Tec+</ion-list-header> <!--Cabeçalho do app-->
-          <ion-note>@agtotec_of</ion-note>
+          <ion-list-header>CadClientes</ion-list-header> <!--Cabeçalho do app-->
+          <ion-note>www.cadclientes.com.br</ion-note>
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
